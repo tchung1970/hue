@@ -85,7 +85,7 @@ hue list scenes            # scenes grouped by room
 hue list schedules         # CLI schedules
 
 hue list room ThomasRoom       # the bulbs in one room
-hue list light AllisonLight-1  # one light's state
+hue list light ThomasLight-1  # one light's state
 hue list scenes ThomasRoom     # scenes belonging to a room
 ```
 
@@ -101,10 +101,9 @@ resulting status. White-only bulbs warn that warm/cool isn't supported.
 ```sh
 hue change room ThomasRoom on
 hue change room ThomasRoom 50          # 50% brightness
-hue change room Bedroom warm           # ~2700K (color-temp bulbs only)
-hue change room Bedroom cool           # ~5000K
-hue change light Bedroom-1 on --ct 4000   # precise Kelvin
-hue change scene LivingRoom Bright     # activate a scene
+hue change room ThomasRoom warm        # ~2700K (color-temp bulbs only)
+hue change room ThomasRoom cool        # ~5000K
+hue change scene ThomasRoom Bright     # activate a scene
 ```
 
 ### Scheduling vs automations
