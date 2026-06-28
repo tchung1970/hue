@@ -72,20 +72,9 @@ If you're already paired, `hue setup` says so and does nothing.
 
 ## Commands
 
-```sh
-hue list <type> [name]     # lights | rooms | scenes | schedules; name drills in
-hue change <type> <name> [state]   # light | room | scene
-hue rename "<old>" "<new>"
-hue schedule add|list|delete ...   # CLIP v1 schedules (created by this tool)
-hue automation             # CLIP v2 automations (read-only; managed in the app)
-hue bridge                 # Bridge details + pairing status
-hue setup                  # pair (see above)
-hue version
-hue help
-```
-
+The command list is shown at the top of this README (and by `hue` / `hue help`).
 Every command prints friendly guidance (with relevant listings) when run with
-missing arguments, instead of a raw error.
+missing arguments, instead of a raw error. The sections below cover the main ones.
 
 ### Listing
 
