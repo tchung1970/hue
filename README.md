@@ -67,7 +67,7 @@ To run `hue` from anywhere, symlink the console script onto your PATH:
 ln -sf "$PWD/.venv/bin/hue" ~/bin/hue   # assuming ~/bin is on PATH
 ```
 
-(The symlink points into `.venv`; if you rebuild the venv, re-run `pip install -e .`.)
+The symlink points into `.venv`; if you rebuild the venv, re-run `pip install -e .`.
 
 ## Setup (one time)
 
