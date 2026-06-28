@@ -93,9 +93,11 @@ def bridge_cmd() -> None:
     """Show the Hue Bridge on your network: IP, model, firmware, and whether
     this tool is paired with it."""
     saved = Config.load()
-    bridges = discover_bridges()  # local SSDP; no cloud
-    if not bridges and saved.bridge_ip:
-        bridges = [{"internalipaddress": saved.bridge_ip}]  # fall back to saved IP
+    if saved.bridge_ip:
+        # Already know the bridge — use the saved IP and skip the ~4s SSDP wait.
+        bridges = [{"internalipaddress": saved.bridge_ip}]
+    else:
+        bridges = discover_bridges()  # local SSDP; no cloud
     if not bridges:
         click.echo("No bridges found. Make sure the Bridge is powered and on your LAN.")
         return
