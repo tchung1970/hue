@@ -53,15 +53,11 @@ source .venv/bin/activate                         # [4]
 pip install -e .                                  # [5]
 ```
 
-- **[1]** download the code.
-- **[2]** enter the project folder.
-- **[3]** create an isolated Python environment (so this project's packages don't
-  touch your system Python).
-- **[4]** activate it, so `python` and `pip` now use it.
-- **[5]** install `hue` and its dependencies. The `.` points pip at this folder,
-  where `pyproject.toml` lists the dependencies (`click`, `requests`) and
-  registers the `hue` command. `-e` (editable) links to the source so code edits
-  take effect without reinstalling.
+**[1]** download the code.\
+**[2]** enter the project folder.\
+**[3]** create an isolated Python environment (so this project's packages don't touch your system Python).\
+**[4]** activate it, so `python` and `pip` now use it.\
+**[5]** install `hue` and its dependencies. The `.` points pip at this folder, where `pyproject.toml` lists the dependencies (`click`, `requests`) and registers the `hue` command. `-e` (editable) links to the source so code edits take effect without reinstalling.
 
 To run `hue` from anywhere, symlink the console script onto your PATH:
 
