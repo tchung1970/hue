@@ -47,10 +47,10 @@ No system packages, no Hue developer account, no internet.
 
 ```sh
 git clone https://github.com/tchung1970/hue.git  # [1]
-cd hue                                            # [2]
-python3 -m venv .venv                             # [3]
-source .venv/bin/activate                         # [4]
-pip install -e .                                  # [5]
+cd hue                                           # [2]
+python3 -m venv .venv                            # [3]
+source .venv/bin/activate                        # [4]
+pip install -e .                                 # [5]
 ```
 
 **[1]** download the code.\
