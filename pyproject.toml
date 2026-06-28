@@ -5,6 +5,7 @@ description = "A command-line tool to control Philips Hue lights via the Bridge'
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [{ name = "Thomas Chung" }]
+license = { text = "MIT" }
 dependencies = [
     "click>=8.1",
     "requests>=2.31",
@@ -12,9 +13,6 @@ dependencies = [
 
 [project.scripts]
 hue = "hue.cli:main"
-
-[project.optional-dependencies]
-dev = ["pytest>=8.0"]
 
 [build-system]
 requires = ["setuptools>=64"]

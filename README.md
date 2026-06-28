@@ -6,6 +6,24 @@ CLIP v2 API.
 
 By Thomas Chung.
 
+```text
+$ hue
+Usage: hue [OPTIONS] [COMMAND] [ARGS]...
+
+  Control Philips Hue lights via the Bridge's local API.
+
+Commands:
+  list        List lights, rooms, scenes, or schedules.
+  change      Change a light, room, or scene.
+  rename      Rename a light or room.
+  schedule    CLIP v1 — add / delete / list (CLI schedules).
+  automation  CLIP v2 — list only (Hue app automations).
+  bridge      Show Bridge details and pairing status.
+  setup       Pair with a Bridge and save its application key.
+  version     Show the version.
+  help        Show this help message.
+```
+
 ## 100% local — no cloud, no account, no internet
 
 `hue` talks **only** to your Hue Bridge on your own network. The Philips cloud is
@@ -24,7 +42,6 @@ never contacted — not for discovery, not for control, not ever:
 - Python packages, installed automatically by `pip`:
   - [`click`](https://pypi.org/project/click/) ≥ 8.1 — command-line interface
   - [`requests`](https://pypi.org/project/requests/) ≥ 2.31 — HTTP to the Bridge
-- Dev/test only: [`pytest`](https://pypi.org/project/pytest/) ≥ 8.0
 
 No system packages, no Hue developer account, no internet.
 
@@ -141,10 +158,6 @@ hue automation             # list the app's automations
 (`mon,wed,fri`). `--dim N` sets brightness (1-100) when turning on. Times are
 shown in AM/PM.
 
-## Development
+## License
 
-```sh
-pip install -e '.[dev]'
-pytest
-pytest tests/test_change.py::test_warm_preset   # a single test
-```
+[MIT](LICENSE) © 2026 Thomas Chung

@@ -13,17 +13,14 @@ it that way: no `discovery.meethue.com`, no remote/cloud endpoints.
 
 ```sh
 python3 -m venv .venv && source .venv/bin/activate
-pip install -e '.[dev]'   # editable install + dev deps (pytest)
-
-pytest                                          # all tests
-pytest tests/test_change.py::test_warm_preset   # a single test
+pip install -e .          # editable install
 
 hue <command>             # console script (entry point is hue.cli:main)
 python -m hue <command>   # equivalent
 ```
 
-No linter is configured. Reinstall (`pip install -e .`) only if the entry point
-in `pyproject.toml` changes.
+No tests or linter are configured. Reinstall (`pip install -e .`) only if the
+entry point in `pyproject.toml` changes.
 
 ## User-facing command surface
 
@@ -50,15 +47,12 @@ Flow is **CLI → config → bridge client → CLIP v2/v1 HTTP**. Modules:
 - `hue/config.py` — persists `{bridge_ip, app_key, client_key}` to
   `~/.config/hue/config.json` (override `$HUE_CONFIG`); `save()` chmods 0o600.
 - `hue/color.py` — `kelvin_to_mirek` (used by `--ct`/warm/cool). `rgb_to_xy`/
-  `hex_to_xy` are legacy (no `color` command) but still tested.
+  `hex_to_xy` are legacy (no `color` command).
 - `hue/models.py` — `model_id` → friendly description; "Warm-to-Cool" prefix
   marks color-temperature-capable models.
 - `hue/schedule.py` — pure builders for the v1 `localtime` string, day-mask math,
   `normalize_time` (accepts 24h and AM/PM), and `clock_12h`/`describe_localtime`
   (render times in AM/PM).
-
-Pure logic (color, schedule strings, `_state_body`, `_ct_label`, model lookup) is
-unit-tested; network code is not.
 
 ## Two scheduling systems (don't conflate them)
 
@@ -93,5 +87,5 @@ unit-tested; network code is not.
 - **Customized help.** `OrderedGroup` fixes command order and puts Commands above
   Options; `--version`/`--help` are exposed as the `version`/`help` commands
   (`add_help_option=False`, `invoke_without_command=True`).
-- **Never bulk-delete schedules in tests.** Delete only the specific ids you
-  created — a blanket "delete all" will wipe the user's real schedules.
+- **Never bulk-delete schedules when verifying.** Delete only the specific ids
+  you created — a blanket "delete all" will wipe the user's real schedules.
