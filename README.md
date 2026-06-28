@@ -142,6 +142,16 @@ hue automation             # list the app's automations
 (`mon,wed,fri`). `--dim N` sets brightness (1-100) when turning on. Times are
 shown in AM/PM.
 
+## Hardware
+
+Developed and tested with these Philips Hue devices:
+
+- [Bridge](https://www.philips-hue.com/en-us/p/hue-bridge/046677458478)
+- [A19 60W — soft warm white (4-pack)](https://www.philips-hue.com/en-us/p/hue-white-60w-a19-4pack-e26-smart-bulbs/046677591045)
+- [A19 60W — White & Color Ambiance](https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-60w-a19-e26-smart-bulb/046677590826)
+- [BR30 — White Ambiance](https://www.philips-hue.com/en-us/p/hue-white-ambiance-br30-e26-smart-bulb/046677577995)
+- [Smart button](https://www.philips-hue.com/en-us/p/smart-button-smart-button/046677605773)
+
 ## License
 
 [MIT](LICENSE) © 2026 Thomas Chung
