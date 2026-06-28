@@ -82,6 +82,10 @@ Flow is **CLI → config → bridge client → CLIP v2/v1 HTTP**. Modules:
 - **Rooms vs zones differ:** a room's `children` are *devices* (→ lights via
   `owner`); a zone's `children` are *lights*. See `_group_member_lights`.
 - **Read-after-write lag.** `change` sleeps ~0.4s before reading status back.
+- **`bridge` skips SSDP when a bridge IP is saved.** `discover_bridges()` always
+  waits out its full ~4s SSDP timeout, so `bridge_cmd` uses the saved IP directly
+  and only falls back to discovery when unpaired. Don't restore unconditional
+  discovery — it makes `hue bridge` take >5s for the common paired case.
 - **`main()` wrapper.** Prints a trailing blank line after every invocation and
   swallows BrokenPipeError when piped into `head`.
 - **Customized help.** `OrderedGroup` fixes command order and puts Commands above
