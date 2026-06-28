@@ -50,7 +50,7 @@ git clone https://github.com/tchung1970/hue.git   # download the code
 cd hue                                             # enter the project folder
 python3 -m venv .venv                              # create an isolated Python environment
 source .venv/bin/activate                          # activate it (so pip/python use it)
-pip install -e .                                    # install hue and its dependencies
+pip install -e .                                   # install hue + dependencies (reads pyproject.toml)
 ```
 
 To run `hue` from anywhere, symlink the console script onto your PATH:
