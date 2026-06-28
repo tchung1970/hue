@@ -87,6 +87,15 @@ The command list is shown at the top of this README (and by `hue` / `hue help`).
 Every command prints friendly guidance (with relevant listings) when run with
 missing arguments, instead of a raw error. The sections below cover the main ones.
 
+### Bridge info
+
+```sh
+hue bridge                 # name, model, firmware, IP, API version, pairing status
+```
+
+Once paired, this is instant — it uses the saved Bridge IP and skips network
+discovery (no ~4s SSDP wait). Discovery only runs when no Bridge is known yet.
+
 ### Listing
 
 ```sh
