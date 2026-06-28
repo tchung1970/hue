@@ -4,8 +4,6 @@ A command-line tool to control Philips Hue lights through the
 [Bridge](https://www.philips-hue.com/en-us/p/hue-bridge/046677458478)'s local
 CLIP v2 API.
 
-By Thomas Chung.
-
 ```text
 $ hue
 Usage: hue [OPTIONS] [COMMAND] [ARGS]...
