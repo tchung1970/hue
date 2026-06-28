@@ -65,8 +65,6 @@ the Bridge:
 
 ```sh
 hue setup                  # finds the Bridge via local SSDP
-hue setup --ip 192.168.1.42   # or pass the IP directly
-hue setup --force          # re-pair even if already paired
 ```
 
 Credentials are saved to `~/.config/hue/config.json` (owner-readable only).
