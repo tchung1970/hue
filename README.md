@@ -46,10 +46,11 @@ No system packages, no Hue developer account, no internet.
 ## Install
 
 ```sh
-git clone https://github.com/tchung1970/hue.git
-cd hue
-python3 -m venv .venv && source .venv/bin/activate
-pip install -e .
+git clone https://github.com/tchung1970/hue.git   # download the code
+cd hue                                             # enter the project folder
+python3 -m venv .venv                              # create an isolated Python environment
+source .venv/bin/activate                          # activate it (so pip/python use it)
+pip install -e .                                    # install hue and its dependencies
 ```
 
 To run `hue` from anywhere, symlink the console script onto your PATH:
