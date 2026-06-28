@@ -46,24 +46,22 @@ No system packages, no Hue developer account, no internet.
 ## Install
 
 ```sh
-git clone https://github.com/tchung1970/hue.git
-cd hue
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
+git clone https://github.com/tchung1970/hue.git  # [1]
+cd hue                                            # [2]
+python3 -m venv .venv                             # [3]
+source .venv/bin/activate                         # [4]
+pip install -e .                                  # [5]
 ```
 
-What each step does:
-
-1. `git clone …` — download the code.
-2. `cd hue` — enter the project folder.
-3. `python3 -m venv .venv` — create an isolated Python environment (so this
-   project's packages don't touch your system Python).
-4. `source .venv/bin/activate` — activate it, so `python` and `pip` now use it.
-5. `pip install -e .` — install `hue` and its dependencies. The `.` points pip at
-   this folder, where `pyproject.toml` lists the dependencies (`click`,
-   `requests`) and registers the `hue` command. `-e` (editable) links to the
-   source so code edits take effect without reinstalling.
+- **[1]** download the code.
+- **[2]** enter the project folder.
+- **[3]** create an isolated Python environment (so this project's packages don't
+  touch your system Python).
+- **[4]** activate it, so `python` and `pip` now use it.
+- **[5]** install `hue` and its dependencies. The `.` points pip at this folder,
+  where `pyproject.toml` lists the dependencies (`click`, `requests`) and
+  registers the `hue` command. `-e` (editable) links to the source so code edits
+  take effect without reinstalling.
 
 To run `hue` from anywhere, symlink the console script onto your PATH:
 
