@@ -46,6 +46,8 @@ No system packages, no Hue developer account, no internet.
 ## Install
 
 ```sh
+git clone https://github.com/tchung1970/hue.git
+cd hue
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e .
 ```
