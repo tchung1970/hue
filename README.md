@@ -101,9 +101,9 @@ resulting status. White-only bulbs warn that warm/cool isn't supported.
 ```sh
 hue change room ThomasRoom on
 hue change room ThomasRoom 50          # 50% brightness
-hue change room AllisonRoom warm       # ~2700K (color-temp bulbs only)
-hue change room AllisonRoom cool       # ~5000K
-hue change light AllisonLight-1 on --ct 4000   # precise Kelvin
+hue change room Bedroom warm           # ~2700K (color-temp bulbs only)
+hue change room Bedroom cool           # ~5000K
+hue change light Bedroom-1 on --ct 4000   # precise Kelvin
 hue change scene LivingRoom Bright     # activate a scene
 ```
 
