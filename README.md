@@ -53,6 +53,8 @@ source .venv/bin/activate                        # [4]
 pip install -e .                                 # [5]
 ```
 
+**Descriptions**
+
 **[1]** download the code.\
 **[2]** enter the project folder.\
 **[3]** create an isolated Python environment (so this project's packages don't touch your system Python).\
